@@ -36,6 +36,11 @@ from inference import inference
 #OUTPUT_JSON_FILE = '/data/dataset/annotations/delete.json'
 #WEIGHTS = '/data/models/efficientnet_with_animals.pth'
 
+def delete_dir(path):
+    for file in os.listdir(path):
+        os.remove(os.path.join(path, file))
+    os.rmdir(path)
+
 def add_classification_label(js, path_to_label):
     with open(path_to_label, 'r', encoding='utf-8') as f:
         label = json.load(f)
@@ -83,6 +88,8 @@ def create_draw_images(input_dir, cropped_dir, output_dir, json_file, output_jso
             
     with open(output_json_file, 'w', encoding='utf-8') as f:
         json.dump(js, fp=f, indent=2)  
+    
+    delete_dir(cropped_dir)
 
 def main():
     parser = argparse.ArgumentParser()

@@ -60,6 +60,23 @@
    ],
    "width": 640,
    "height": 640
+  },
+  {
+   "file": "photo_2024-07-29_15-49-06.jpg",
+   "detections": [
+    {
+     "category": "1",
+     "conf": 0.939,
+     "bbox": [
+      0.2991,
+      0.2618,
+      0.0862,
+      0.1592
+     ]
+    }
+   ],
+   "width": 1160,
+   "height": 653
   }
  ],
  "detection_categories": {
@@ -68,7 +85,7 @@
   "3": "vehicle"
  },
  "info": {
-  "detection_completion_time": "2024-07-29 03:59:24",
+  "detection_completion_time": "2024-07-29 08:56:34",
   "format_version": "1.3",
   "detector": "md_v5a.0.0.pt",
   "detector_metadata": {
