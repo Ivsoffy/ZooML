@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #initialize conda
-source /data/storage/miniforge/etc/profile.d/conda.sh #надо чето переделать
+source $HOME/miniforge3/etc/profile.d/conda.sh
 #initialize megadetector
 export PYTHONPATH="../MegaDetector:../yolov5"
 
@@ -24,7 +24,7 @@ weights=models/efficientnet_with_animals.pth
 path_to_label=storage/TrapperAI_index.json
 
 #envs
-hydra_env=/data/storage/hydraenv/bin/activate
+hydra_env=../hydraenv/bin/activate
 
 #python scripts
 run_detector_batch=../MegaDetector/megadetector/detection/run_detector_batch.py
@@ -32,11 +32,11 @@ crop_detections=../MegaDetector/megadetector/classification/crop_detections.py
 classifier=hydra_classifier/classifier.py
 
 #activate venv for megadetector
-conda activate cameratraps-detector
+conda activate megadetector
 #run megadetector
 python3.8 $run_detector_batch MDV5A $input_dir $path_json_detect_file --output_relative_filenames --checkpoint_frequency 10000 --quiet --threshold 0.2 --include_image_size
 #initialize for crops_detection.py
-conda activate cameratraps-classifier
+conda activate megaclassifier
 #run crops detection
 python3.9 $crop_detections -i $input_dir --save-full-images --square-crops -t 0.1 -n 6 --logdir $logdir $path_json_detect_file $crop_image_folder
 conda deactivate

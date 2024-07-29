@@ -9,6 +9,6 @@ deactivate
 git clone https://github.com/agentmorris/MegaDetector
 git clone https://github.com/ecologize/yolov5
 cd MegaDetector
-#mamba env create --file envs/environment-detector.yml
-#mamba env create --file envs/environment-classifier.yml
+conda env create --file envs/environment-detector.yml
+conda env create --file envs/environment-classifier.yml
 

@@ -26,9 +26,9 @@
    ```
    git clone https://github.com/Ivsoffy/ZooML.git
    ```
-2. перейдите в папку ZooML и установите mamba:
+2. перейдите в папку ZooML и установите conda:
    ```
-   bash install_mamba.sh
+   bash install_conda.sh
    ```
 4. установите зависимости:
    ```
