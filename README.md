@@ -28,7 +28,7 @@
    ```
 2. перейдите в папку ZooML и установите mamba:
    ```
-   ./install_mamba.sh
+   bash install_mamba.sh
    ```
 4. установите зависимости:
    ```
