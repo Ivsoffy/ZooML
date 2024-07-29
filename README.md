@@ -49,4 +49,4 @@
 ## Настройка скрипта
 Для настройки скрипта рекомендуется менять только paths intended for configuration
 ## Пример работы
-![Classifier image](https://github.com/Ivsoffy/ZooML/raw/main/repos_img/demo.jpg)
+![Classifier image](https://github.com/Ivsoffy/ZooML/blob/main/dataset/repos_img/demo.jpg)
