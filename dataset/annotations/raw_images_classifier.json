@@ -82,7 +82,7 @@
     "16": "wolverine"
   },
   "info": {
-    "detection_completion_time": "2024-07-29 03:09:33",
+    "detection_completion_time": "2024-07-29 03:59:24",
     "format_version": "1.3",
     "detector": "md_v5a.0.0.pt",
     "detector_metadata": {
