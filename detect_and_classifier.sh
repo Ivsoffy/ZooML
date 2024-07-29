@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #initialize conda
-source $HOME/miniforge3/etc/profile.d/conda.sh
+source /data/test/miniforge3/etc/profile.d/conda.sh
 #initialize megadetector
 export PYTHONPATH="../MegaDetector:../yolov5"
 
 
-if [ "$#"==2 ]
+if [ "$#" == 2 ]
 then
 input_dir=$1
 output_dir=$2
