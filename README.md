@@ -6,15 +6,21 @@
 
 ## Установка:
 1. склонируйте репозиторий:
-    https://github.com/Ivsoffy/ZooML.git
+   '''
+   https://github.com/Ivsoffy/ZooML.git
+   '''
 2. перейдите в папку ZooML и установите mamba:
-  ./install_mamba.sh
-3. установите зависимости:
-  bash install_dependencies.sh
-
+   ''' 
+   ./install_mamba.sh
+   '''
+4. установите зависимости:
+   '''
+   bash install_dependencies.sh
+   '''
 ## Запуск:
 для проверки, что все установилось правильно, можно запустить демо. изначально скрипт настроен на демо. Запускаем скрипт в папке ZooML. 
-  bash detect_and_classifier.sh
-
+   '''
+   bash detect_and_classifier.sh
+   '''
 ## Настройка скрипта:
 Для настройки скрипта рекомендуется менять только paths intended for configuration
