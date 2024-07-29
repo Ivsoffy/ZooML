@@ -6,3 +6,4 @@ torchvision==0.16.2
 hydra-core==1.3.2
 omegaconf==2.3.0
 scikit-learn==1.3.2
+efficientnet-pytorch==0.7.1

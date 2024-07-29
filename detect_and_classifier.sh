@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #initialize conda
-source data/storage/miniforge/etc/profile.d/conda.sh #надо чето переделать
+source /data/storage/miniforge/etc/profile.d/conda.sh #надо чето переделать
 #initialize megadetector
-export PYTHONPATH="$HOME/MegaDetector:$HOME/mega/yolov5"
+export PYTHONPATH="../MegaDetector:../yolov5"
 
 #paths
 path_input_dir=dataset/raw_images
@@ -15,7 +15,7 @@ output_dir=dataset/output_images
 weights=models/efficientnet_with_animals.pth
 path_to_label=storage/TrapperAI_index.json
 #envs
-hydra_env=../hydraenv/bin/activate
+hydra_env=/data/storage/hydraenv/bin/activate
 #python scripts
 run_detector_batch=../MegaDetector/megadetector/detection/run_detector_batch.py
 crop_detections=../MegaDetector/megadetector/classification/crop_detections.py
