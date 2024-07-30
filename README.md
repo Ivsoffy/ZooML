@@ -48,5 +48,18 @@
 - path_to_output_dir - путь до папки, в которую будут сохраняться фотографии с классифицированными животными
 ## Настройка скрипта
 Для настройки скрипта рекомендуется менять только paths intended for configuration
+## Разделение классифицированных файлов по папкам
+в репозитории присутствует скрипт для разделения классифицированных фотографий по папкам.
+```
+python split_by_directories.py path_to_images path_to_classifier_json_file path_to_folder_with_classes
+```
+где:
+- path_to_images - путь до директории с классифицированными фотографиями
+- path_to_classifier_json_file - путь до json файла с классификацией фотографий
+- path_to_folder_with_classes - путь до директории, где будут находиться классы
+### Запуск демо
+```
+python split_by_directories.py ./dataset/output_images ./dataset/annotations/raw_images_classifier.json ./dataset/classes
+```
 ## Пример работы
 ![Classifier image](https://github.com/Ivsoffy/ZooML/blob/main/dataset/repos_img/demo.jpg)

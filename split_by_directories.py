@@ -7,6 +7,8 @@ from tqdm import tqdm
 
 
 def create_directories(path, labels):
+    if not os.path.exists(os.path.join(path, 'classes')):
+        os.makedirs(os.path.join(path, 'classes'))
     set_labels = set([labels[key] for key in labels])
     for label in set_labels:
         if not os.path.exists(os.path.join(path, label)):
