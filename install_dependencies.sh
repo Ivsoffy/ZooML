@@ -9,7 +9,7 @@ deactivate
 git clone https://github.com/agentmorris/MegaDetector
 git clone https://github.com/ecologize/yolov5
 cd MegaDetector
-source $HOME/miniforge3/etc/profile.d/conda.sh
+source $ZOOML/../miniforge3/etc/profile.d/conda.sh
 conda env create --file envs/environment-detector.yml
 conda env create --file envs/environment-classifier.yml
 

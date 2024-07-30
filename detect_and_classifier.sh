@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #initialize conda
-source /data/test/miniforge3/etc/profile.d/conda.sh
+source $ZOOPATH/../miniforge3/etc/profile.d/conda.sh
 #initialize megadetector
-export PYTHONPATH="../MegaDetector:../yolov5"
+export PYTHONPATH="$ZOOPATH/../MegaDetector:$ZOOPATH/../yolov5"
 
 
 if [ "$#" == 2 ]
@@ -11,25 +11,25 @@ then
 input_dir=$1
 output_dir=$2
 else
-input_dir=dataset/raw_images
-output_dir=dataset/output_images
+input_dir=$ZOOPATH/dataset/raw_images
+output_dir=$ZOOPATH/dataset/output_images
 fi 
 
 #paths
-path_json_detect_file=dataset/annotations/raw_images_detect.json
-path_final_json=dataset/annotations/raw_images_classifier.json
-logdir=storage/logs/
-crop_image_folder=dataset/crop_images
-weights=models/efficientnet_with_animals.pth
-path_to_label=storage/TrapperAI_index.json
+path_json_detect_file=$ZOOPATH/dataset/annotations/raw_images_detect.json
+path_final_json=$ZOOPATH/dataset/annotations/raw_images_classifier.json
+logdir=$ZOOPATH/storage/logs/
+crop_image_folder=$ZOOPATH/dataset/crop_images
+weights=$ZOOPATH/models/efficientnet_with_animals.pth
+path_to_label=$ZOOPATH/storage/TrapperAI_index.json
 
 #envs
-hydra_env=../hydraenv/bin/activate
+hydra_env=$ZOOPATH/../hydraenv/bin/activate
 
 #python scripts
-run_detector_batch=../MegaDetector/megadetector/detection/run_detector_batch.py
-crop_detections=../MegaDetector/megadetector/classification/crop_detections.py
-classifier=hydra_classifier/classifier.py
+run_detector_batch=$ZOOPATH/../MegaDetector/megadetector/detection/run_detector_batch.py
+crop_detections=$ZOOPATH/../MegaDetector/megadetector/classification/crop_detections.py
+classifier=$ZOOPATH/hydra_classifier/classifier.py
 
 #activate venv for megadetector
 conda activate megadetector
