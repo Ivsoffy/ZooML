@@ -1,3 +1,10 @@
 **/logs
 ./dataset/annotations
 ./dataset/classes
+./dataset/hydra_classifier/__pycache__
+./dataset/hydra_classifier/srcs/__pycache__
+./dataset/hydra_classifier/srcs/data_loader/__pycache__
+./dataset/hydra_classifier/srcs/model/__pycache__
+./dataset/hydra_classifier/srcs/trainer/__pycache__
+./dataset/hydra_classifier/srcs/utils/__pycache__
+./dataset/output_images
