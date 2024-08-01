@@ -29,12 +29,8 @@
    ```
    git clone https://github.com/Ivsoffy/ZooML.git
    ```
-2. перейдите в папку ZooML и установите conda:
-   ```
-   bash install_conda.sh
-   ```
+2. установите зависимости:
    Во время установки, укажите такой путь, чтобы директория находилась рядом с директорией ZooML
-3. установите зависимости:
    ```
    bash install_dependencies.sh
    ```
