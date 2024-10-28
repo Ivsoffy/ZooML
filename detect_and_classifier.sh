@@ -21,7 +21,7 @@ path_final_json=$ZOOPATH/dataset/annotations/raw_images_classifier.json
 logdir=$ZOOPATH/storage/logs/
 crop_image_folder=$ZOOPATH/dataset/crop_images
 weights=$ZOOPATH/models/efficientnet_with_animals.pth
-path_to_label=$ZOOPATH/storage/TrapperAI_index.json
+path_to_label=$ZOOPATH/storage/label.json
 
 #envs
 hydra_env=$ZOOPATH/../hydraenv/bin/activate
