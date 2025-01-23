@@ -17,8 +17,8 @@ path_json_detect_file=$ZOOPATH/dataset/annotations/raw_images_detect.json
 path_final_json=$ZOOPATH/dataset/annotations/raw_images_classifier.json
 logdir=$ZOOPATH/storage/logs/
 crop_image_folder=$ZOOPATH/dataset/crop_images
-weights=$ZOOPATH/models/efficientnet_with_animals.pth
-path_to_label=$ZOOPATH/storage/label.json
+weights=$ZOOPATH/models/efficientnet_model_2.pth
+path_to_label=$ZOOPATH/storage/label_exp.json
 
 #envs
 hydra_env=$ZOOPATH/../hydraenv/bin/activate
