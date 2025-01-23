@@ -4,7 +4,7 @@ import cv2
 import os
 
 
-def join_video(output_dir, output_video):
+def join_video(output_dir, output_video, fps):
     images = [img for img in os.listdir(output_dir) if img.endswith(".jpg") or img.endswith(".png")]
     if not images:
         print("Ошибка: В папке нет фотографий.")
@@ -14,7 +14,6 @@ def join_video(output_dir, output_video):
     first_image = cv2.imread(first_image_path)
     height, width, layers = first_image.shape
 
-    fps = 30
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")  # Кодек для MP4
     video_writer = cv2.VideoWriter(output_video, fourcc, fps, (width, height))
 
@@ -35,7 +34,10 @@ def main():
     parser.add_argument(
         'output_video',
         help = 'The path to the video where framed photos will be saved')
-    if len(sys.argv[1:]) != 2:
+    parser.add_argument(
+        'fps',
+        help = 'fps for new video')
+    if len(sys.argv[1:]) != 3:
         parser.print_help()
         parser.exit()
         

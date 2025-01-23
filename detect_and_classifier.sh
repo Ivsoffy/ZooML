@@ -36,11 +36,12 @@ conda activate megadetector
 #run megadetector
 python3.8 $run_detector_batch MDV5A $input_dir $path_json_detect_file --output_relative_filenames --checkpoint_frequency 10000 --quiet --threshold 0.2 --include_image_size
 #initialize for crops_detection.py
+conda deactivate
 conda activate megaclassifier
 #run crops detection
 python3.9 $crop_detections -i $input_dir --save-full-images --square-crops -t 0.1 -n 6 --logdir $logdir $path_json_detect_file $crop_image_folder
 conda deactivate
 #activate venv for classifier
-source $hydra_env
+#source $hydra_env
 #run classifier
 python3 $classifier $input_dir $crop_image_folder $output_dir $path_json_detect_file $path_final_json $weights $path_to_label
