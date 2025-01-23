@@ -27,6 +27,7 @@ def inference(path, model):
     max_side = max(frame.shape[0:2])
     old_image_height, old_image_width, channels = frame.shape
     color = (255, 255, 255)
+    device = next(model.parameters()).device
 
     padded = np.full((max_side, max_side, channels), color, dtype=np.uint8)
     padded[0:old_image_height,0:old_image_width] = frame
@@ -35,6 +36,7 @@ def inference(path, model):
     image = cv2.resize(image, (224, 224))
     image = np.transpose(image, (2, 0, 1))
     image = torch.tensor(image).float()
+    image = image.to(device)
 
     with torch.no_grad():
         predict = model(image.unsqueeze(0))

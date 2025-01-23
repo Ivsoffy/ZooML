@@ -10,16 +10,33 @@ from pathlib import Path
 
 
 def load_model(weights):
-    checkpoint = torch.load(weights)
+    # Определяем устройство (GPU или CPU)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    # Загружаем чекпоинт
+    checkpoint = torch.load(weights, map_location=device)  # Указываем устройство для загрузки весов
+
+    # Создаем конфигурацию модели
     loaded_config = OmegaConf.create(checkpoint['config'])
 
+    # Инициализируем модель
     model = instantiate(loaded_config.arch)
 
+    # Загружаем веса модели
     state_dict = checkpoint['state_dict']
+
+    # Переносим веса на то же устройство, что и модель
+    state_dict = {k: v.to(device) for k, v in state_dict.items()}
+
+    # Загружаем веса в модель
     model.load_state_dict(state_dict)
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    # Переносим модель на устройство
     model = model.to(device)
+
+    # Переводим модель в режим оценки
     model.eval()
+
     return model
 
 

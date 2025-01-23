@@ -10,6 +10,7 @@ def join_video(output_dir, output_video, fps):
         print("Ошибка: В папке нет фотографий.")
         exit()
 
+    images.sort()
     first_image_path = os.path.join(output_dir, images[0])
     first_image = cv2.imread(first_image_path)
     height, width, layers = first_image.shape
@@ -43,7 +44,7 @@ def main():
         
     args = parser.parse_args()
     
-    join_video(args.ouput_dir, args.output_video)
+    join_video(args.output_dir, args.output_video, int(args.fps))
         
     
 if __name__ == '__main__':

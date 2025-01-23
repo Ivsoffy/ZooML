@@ -45,7 +45,7 @@ def main():
 
     args = parser.parse_args()
 
-    break_video(args.input_video, args.input_dir, args.fps)
+    break_video(args.input_video, args.input_dir, int(args.fps))
 
 if __name__ == '__main__':
     main()
