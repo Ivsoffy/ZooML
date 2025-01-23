@@ -42,7 +42,11 @@ def inference(path, model):
         predict = model(image.unsqueeze(0))
     predicted_conf = torch.nn.functional.softmax(predict, dim=-1).max(1)
     predicted_confs = torch.nn.functional.softmax(predict, dim=-1).cpu().numpy()
-    classes = ['badger', 'bird', 'boar', 'brown_bear', 'deer', 'fox', 'hare', 'himalayan_bear', 'lynx', 'manul', 'marmot', 'raccoon_dog', 'snow_leopard', 'squirrel', 'weasel', 'wolf', 'wolverine']
+    classes = [
+    "badger", "beaver", "black_heron", "boar", "brown_bear", "deer", 
+    "european_bison", "european_hare", "lynx", "mink", "moose", 
+    "otter", "rabbit", "raccoon_dog", "wolf"
+    ]
     num_class = predicted_conf.indices[0]
     
     confidence = max(predicted_confs[0])
